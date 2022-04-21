@@ -23,7 +23,7 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div style="height: 90vh;">
-                    <img style="max-width: 80%; max-height: 80%; box-shadow: 5px 5px 8px #504c4c;" class="image-thumbail" src="https://ocdn.eu/pulscms-transforms/1/XEaktkpTURBXy84NzMwM2YxM2Q1MTAyNjQ1MjE4YjhkYzBmZTNlOTE4OS5qcGeSlQMAIM0EAM0CQJMFzQKAzQFA" alt="Card image cap">
+                    <img style="max-width: 80%; max-height: 80%; box-shadow: 5px 5px 8px #504c4c;" class="image-thumbail" src="{{neighbor.image.url}}" alt="Card image cap">
                                         <!-- project.image.url will be automatically be linked to the photo.ID cz we 
                                             specified it in the button calling this page                                                                                                                                                                               -->
                     <br>
@@ -31,10 +31,13 @@
                     <br>
                     <p>
                         <ul>
-                            <li>Police department Details:</li>
-                            <li>Health department Details:</li>
+                            <li>Neighbourhood name: {{neighbor.name}}</li> 
+                            <li>POLICE: {{neighbor.police_number}}</li>
+                            <li>Health department Details:{{neighbor.local_hospital}}</li>
                             <li>Businesses in this area:</li>
+                            <li>Created by: {{neighbor.local_hospital}}</li>
                         </ul>
+                        <p>Description: {{neighbor.description}}</p>
                     </p>
                             <!-- Button trigger modal -->
                         <br>

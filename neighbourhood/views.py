@@ -12,7 +12,8 @@ def neighbourhood(request):
 
 
 def view_neighbourhood(request, pk):
-    return render(request, 'neighbourhood/neighbourhoodview.html')
+    view_neighbors = Neighborhood.objects.get(id=pk)
+    return render(request, 'neighbourhood/neighbourhoodview.html', {'view_neighbors':view_neighbors})
 
 
 

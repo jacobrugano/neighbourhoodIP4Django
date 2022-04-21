@@ -117,25 +117,27 @@
               </div>
 
               {% for neighbor in neighbors %}
+              
               <div class="col-md-9">
                   <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-12">
                       <div class="card border-primary mb-3" style="box-shadow: 5px 5px 8px #504c4c;"> <!-- To add box-shadow for the cards -->
-                        <img class="image-thumbail" src="{{neighbor.image.url}}" alt="Card image cap">
-                        <div class="card-body">
-                          <h5 class="card-title" style="color: rgb(14, 4, 4);">Neighbourhood name: {{neighbor.name}}</h5>
-                          <h7 class="card-title" style="color: rgb(14, 4, 4);">HOSPITAL LINE: {{neighbor.local_hospital}}</h7>
-                          <h7 class="card-title" style="color: rgb(14, 4, 4);">POLICE: {{neighbor.police_number}}</h7>
+                        <img class="image-thumbail" src="{{neighbor.image.url}}" alt="Card image cap" style="height: 300px; object-fit: cover;" >
+                        <div class="card">
+                            <p>
+                                <ul>
+                                    <li>Neighbourhood name: {{neighbor.name}}</li> 
+                                    <li>POLICE: {{neighbor.police_number}}</li>
+                                    <li>Health department Details:{{neighbor.local_hospital}}</li>
+                                    <li>Businesses in this area:</li>
+                                    <li>Created by: {{neighbor.local_hospital}}</li>
+                                    <p>Description: {{neighbor.description}}</p>
+                                </ul>
+                            </p>
                           
-                          
-                          <h6><i></i></h6>
+
                                                          <!-- Same as project.category -->
                                                          <br>
-                          <a href=" {% url 'neighbourhoodview' 2 %}" class="btn btn-outline-success btn-sm m-1">View this Area </a>
-
-                          <a href="" class="btn btn-outline-success btn-sm m-1">View Businesses </a>
-                          <a href="" class="btn btn-outline-success btn-sm m-1">View Police contact</a>
-                          <a href="" class="btn btn-outline-success btn-sm m-1">View Health Office</a>
                           <!-- url 'project' project.id bcos remember in the view function, we queried the database with an ID for the project -->
                         </div>
                       </div>
