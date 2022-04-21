@@ -8,7 +8,7 @@ def neighbourhood(request):
 
 
 def view_neighbourhood(request, pk):
-    return render(request, 'neighbourhood/view_neighbourhood.html')
+    return render(request, 'neighbourhood/neighbourhoodview.html')
 
 
 
