@@ -36,7 +36,7 @@
         <nav class="navbar navbar-dark bg-primary">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" style="color: white;">Awwards</a>
+              <a class="navbar-brand" style="color: white;">neighbourhood</a>
             </div>
             {% if user.is_authenticated %}
     <!-- div for profile -->
@@ -115,13 +115,19 @@
                       </ul>
                     </div>
               </div>
+
+              {% for neighbor in neighbors %}
               <div class="col-md-9">
                   <div class="row">
                     <div class="col-md-4">
                       <div class="card border-primary mb-3" style="box-shadow: 5px 5px 8px #504c4c;"> <!-- To add box-shadow for the cards -->
-                        <img class="image-thumbail" src="https://ocdn.eu/pulscms-transforms/1/XEaktkpTURBXy84NzMwM2YxM2Q1MTAyNjQ1MjE4YjhkYzBmZTNlOTE4OS5qcGeSlQMAIM0EAM0CQJMFzQKAzQFA" alt="Card image cap">
+                        <img class="image-thumbail" src="{{neighbor.image.url}}" alt="Card image cap">
                         <div class="card-body">
-                          <h5 class="card-title" style="color: brown;">Neighbourhood name: </h5>
+                          <h5 class="card-title" style="color: rgb(14, 4, 4);">Neighbourhood name: {{neighbor.name}}</h5>
+                          <h7 class="card-title" style="color: rgb(14, 4, 4);">HOSPITAL LINE: {{neighbor.local_hospital}}</h7>
+                          <h7 class="card-title" style="color: rgb(14, 4, 4);">POLICE: {{neighbor.police_number}}</h7>
+                          
+                          
                           <h6><i></i></h6>
                                                          <!-- Same as project.category -->
                                                          <br>
@@ -134,11 +140,12 @@
                         </div>
                       </div>
                     </div>
-                    
-                      <h3>No projects added......</h3>
-                    
+                    {% empty %}
+                      <h3>No neighbourhood added</h3>
                   </div>
               </div>
+              {% endfor %}
+
           </div>
   
         <!-- Modal -->
