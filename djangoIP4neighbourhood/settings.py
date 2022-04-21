@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -118,7 +119,31 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.2/howto/static-files/
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+# MEDIA_URL = '/media/'
+MEDIA_URL = '/images/'
+
+STATICFILES_DIRS = [ 
+    BASE_DIR / 'static'    # Means we are going into the base directory then finding a file called static
+]
+
+MEDIA_ROOT = BASE_DIR / 'static/images' # Its like instructing django that it should store any photo added by a user,
+                                           #by going to base directory then to static folder then to images folder
+
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Used only in production. This code instructs django to always bundle up
+                                          # all static files added by users into one file then call that file staticfiles
+                                       # This are mainly files such as CSS and JS files
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

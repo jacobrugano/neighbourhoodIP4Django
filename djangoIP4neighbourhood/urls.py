@@ -17,8 +17,20 @@ from django.contrib import admin
 from django.urls import path, include
 
 from neighbourhood.views import neighbourhood
+from django.conf import settings
+from django.conf.urls.static import static 
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('neighbourhood.urls')),
+    # path('authentication/', include('django.contrib.auth.urls')),
+    # path('authentication/', include('authentication.urls')),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+                # To add the static file as a url to the project urls 
+                # This code says, go to settings then Pick MEDIA_URL
+                # Then inside get a document in settings with MEDIA_ROOT
+urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+                # To register files such as css and js files
+

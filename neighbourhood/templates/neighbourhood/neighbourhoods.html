@@ -95,8 +95,17 @@
                       </div>
                       <ul class="list-group list-group-flush">
                         <li class="list-group-item" ><a href=""> All Neighbourhoods</a></li>                 </li>
-                        <li class="list-group-item"><a href=""> Nakuru</a></li> 
-                        <li class="list-group-item"><a href=""> Mombasa</a></li>   
+                       {% for neighbor in neighbors %}
+                       <li class="list-group-item"><a href="">{{neighbor.name}}</a></li> 
+                       <p>
+                        <!-- LOCATION:{{neighbor.location}}
+                       CREATED BY: {{neighbor.admin}}
+                       DESCR: {{neighbor.description}}
+                       HOSPITAL LINE: {{neighbor.local_hospital}}
+                       POLICE: {{neighbor.police_number}}
+                       </p> -->
+                       {% endfor %}
+                       
                         <li class="list-group-item">  
                         <!-- Note that category.name is in small letters -->  
                         <li class="list-group-item">
@@ -117,6 +126,7 @@
                                                          <!-- Same as project.category -->
                                                          <br>
                           <a href=" {% url 'neighbourhoodview' 2 %}" class="btn btn-outline-success btn-sm m-1">View this Area </a>
+
                           <a href="" class="btn btn-outline-success btn-sm m-1">View Businesses </a>
                           <a href="" class="btn btn-outline-success btn-sm m-1">View Police contact</a>
                           <a href="" class="btn btn-outline-success btn-sm m-1">View Health Office</a>
