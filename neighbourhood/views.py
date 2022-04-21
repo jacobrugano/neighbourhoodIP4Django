@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def neighbourhood(request):
-    return render(request, 'neighbourhood/neighbourhood.html')
+    return render(request, 'neighbourhood/neighbourhoods.html')
 
 
 
