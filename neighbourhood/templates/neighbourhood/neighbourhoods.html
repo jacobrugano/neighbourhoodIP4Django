@@ -41,20 +41,21 @@
             {% if user.is_authenticated %}
             <!-- div for profile -->
                     <div>
-                      <a class="btn btn-dark my-2 my-sm-0" href="{% url 'edit_profile' %}">Edit Profile</a>
+                      <a class="btn btn-dark my-2 my-sm-0" href="">Edit Profile</a>
                    </div>
               <!-- div for logout icon -->
                       <div>
-                        <a class="btn btn-dark my-2 my-sm-0" href="{% url 'logout' %}">Logout</a>
+                        <a class="btn btn-dark my-2 my-sm-0" href="">Logout</a>
                       </div>
           
-                    {% else %}
+                    
                         <div>
                           <a class="btn btn-dark my-2 my-sm-0" href="{% url 'register' %}">Register</a>
                       </div>
                  <!-- div for login -->
+                 {% else %}
                       <div>
-                          <a class="btn btn-dark my-2 my-sm-0" href="{% url 'login' %}">Login</a>
+                          <a class="btn btn-dark my-2 my-sm-0" href="">Login</a>
                       </div>
                     {% endif %}
                     <!-- div for register -->
