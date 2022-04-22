@@ -61,10 +61,10 @@
                     <!-- div for register -->
   
   
-            {% if user.is_authenticated %}
+            
                       <!-- Adding a search form  -->
             <div class="col-sm-4 col-md-4 navbar-right">
-      
+              {% if user.is_authenticated %}
               <form class="navbar-form" role="search" action=>
                 
      
@@ -78,7 +78,9 @@
                 </div>
       
               </form>
+              {% endif %}
             </div>
+
             <!-- search form end -->
           </div>
         </nav>   
