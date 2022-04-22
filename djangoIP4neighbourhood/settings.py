@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'neighbourhood',
     'authentication',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -150,3 +151,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'  # Used only in production. This code ins
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGIN_REDIRECT_URL = 'gallery'
+LOGOUT_REDIRECT_URL = 'gallery'
