@@ -153,5 +153,5 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'  # Used only in production. This code ins
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-LOGIN_REDIRECT_URL = 'gallery'
-LOGOUT_REDIRECT_URL = 'gallery'
+LOGIN_REDIRECT_URL = 'neighbourhood'
+LOGOUT_REDIRECT_URL = 'neighbourhood'
