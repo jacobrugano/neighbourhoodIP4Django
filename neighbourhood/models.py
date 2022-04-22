@@ -21,6 +21,7 @@ class Neighborhood(models.Model):
     description = models.TextField()
     local_hospital = models.IntegerField(null=True, blank=True)
     police_number = models.IntegerField(null=True, blank=True)
+    occupants_count = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return f'{self.name}'
@@ -33,6 +34,14 @@ class Neighborhood(models.Model):
 
     @classmethod
     def find_neighborhood(cls, neighborhood_id):
+        return cls.objects.filter(id=neighborhood_id)
+
+    @classmethod
+    def update_neighborhood(cls, neighborhood_id):
+        return cls.objects.filter(id=neighborhood_id)
+
+    @classmethod
+    def update_occupants(cls, neighborhood_id):
         return cls.objects.filter(id=neighborhood_id)
 
 

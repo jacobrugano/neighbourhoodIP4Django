@@ -17,5 +17,6 @@ def view_neighbourhood(request, pk):
 
 
 
-def add_neighbourhood(request):
-    return render(request, 'neighbourhood/add_neighbourhood.html')
+def add_post(request):
+    posts = Post.objects.all()
+    return render(request, 'neighbourhood/add_post.html', {'posts':posts})

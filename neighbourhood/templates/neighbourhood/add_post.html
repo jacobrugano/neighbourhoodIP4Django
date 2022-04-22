@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Project</title>
+<!--Attach CSS only from bootstrap5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
+</head>
+<body class="m-5">
+   
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+
+                    <form method="POST" action="" enctype="multiple/form-data">
+                        <!-- enctype="multiple/form-data bcos the form will be uploading files/images. -->
+                         <!-- Bcos you can't send a POST request without csrf_token  -->
+
+                        <div class="form-group  m-3">
+                            <!-- m-3 to create margins from the card borders & from content below it-->
+                          <label>Post title</label>
+                          <input required name="description" type="text" placeholder="Your post caption...." class="form-control">
+                        </div>
+                    </form>
+    
+                    <form>
+                        <div class="form-group  m-3">
+                            <!-- m-3 to create margins from the card borders & from content below it-->
+                          <label> <a href="#"></a> Post</label>
+                          <input required name="link" type="text" placeholder="What's in your mind....." class="form-control">
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="form-group  m-3">
+                          <label> Select Neighbourhood for the post</label>
+                          <select name="category" class="form-control">
+                          <option required value="none">Select a neighbourhood</option>
+
+     <!-- code to give a select options of the categories using their IDs and names -->
+                          <option value=></option>
+                        </select>                     
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="form-group m-3">
+                         <!-- m-3 to create margins from the card borders & from content below it-->
+                          <label >Upload Photo</label>
+                          <input required name="project" type="file" class="form-control-file">
+                        </div>
+                    </form>
+
+                    <form>
+                        <button type="submit" class="btn btn-primary btn-sm" >POST</button>
+                    </form>
+                    
+                </div>
+                <div>        
+                    <a href="{% url 'neighbourhood' %}" class="btn btn-dark my-3">Go Back</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <h6>You are not logged in and you know it...!! so stop bypassing in a cheeky way like a hacker!!!</h6>
+</body>
+</html>
