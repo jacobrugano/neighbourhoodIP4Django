@@ -109,8 +109,7 @@
                         <li class="list-group-item">  
                         <!-- Note that category.name is in small letters -->  
                         <li class="list-group-item">
-                          <a href="{% url 'add' %}" class="btn btn-outline-success my-6 my-sm-0" >Join a Neighbourhood</a>
-                          <a href="" class="btn btn-outline-success my-6 my-sm-0">Post to the Neighbourhood</a>
+                          <a href="{% url 'add' %}" class="btn btn-outline-success my-6 my-sm-0" >Post to the Neighbourhood</a>
                         </li>
                       </ul>
                     </div>
@@ -129,17 +128,28 @@
                                     <li>Neighbourhood name: {{neighbor.name}}</li> 
                                     <li>POLICE: {{neighbor.police_number}}</li>
                                     <li>Health department Details:{{neighbor.local_hospital}}</li>
-                                    <li>Businesses in this area:</li>
+                                    <li>Businesses in this area:
+                                        <p><ul>
+                                            <li> <a href="sarovahotels.com">Sarova Hotel</a></li>
+                                            <li><a href="https://sankara.com/">Sankara Hotel</a></li>
+                                            <li><a href="https://devkigroupke.com/">Devki Mills</a></li>
+                                            <li><a href="https://moringaschool.com/">Moringa School</a></li>
+                                        </ul></p> 
+                                    </li>
                                     <li>Created by: {{neighbor.local_hospital}}</li>
                                     <p>Description: {{neighbor.description}}</p>
                                 </ul>
                             </p>
+                            <a href="" class="btn btn-outline-success my-sm-0" style="width: 200px;">Join this Neighbourhood</a>
+
+
                           
 
                                                          <!-- Same as project.category -->
                                                          <br>
                           <!-- url 'project' project.id bcos remember in the view function, we queried the database with an ID for the project -->
                         </div>
+
                       </div>
                     </div>
                     {% empty %}

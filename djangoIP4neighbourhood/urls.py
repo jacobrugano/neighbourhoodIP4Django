@@ -24,8 +24,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('neighbourhood.urls')),
-    # path('authentication/', include('django.contrib.auth.urls')),
-    # path('authentication/', include('authentication.urls')),
+    path('authentication/', include('django.contrib.auth.urls')),
+    path('authentication/', include('authentication.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
                 # To add the static file as a url to the project urls 
